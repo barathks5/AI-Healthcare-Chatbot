@@ -1,0 +1,131 @@
+# AI Healthcare Chatbot Documentation
+
+## 1. Project Overview
+
+The AI Healthcare Chatbot is a web-based application designed to assist users with preliminary medical inquiries using natural language processing. It supports multiple languages and speech input, offering a more inclusive and accessible healthcare experience.
+
+---
+
+## 2. Key Features
+
+* AI-powered chatbot for medical symptom checking
+* Multilingual support: English, Hindi, Tamil, Telugu
+* Text and speech input support
+* Real-time response with voice output
+* Session-based chat history
+* Light and dark UI themes
+
+---
+
+## 3. Technology Stack
+
+**Frontend:**
+
+* HTML, CSS, JavaScript
+* Bootstrap, Font Awesome for UI
+
+**Backend:**
+
+* Python 3.11 (Flask Framework)
+* OpenAI (for AI responses)
+* gTTS (Google Text-to-Speech)
+
+**APIs & Tools:**
+
+* Web Speech API (browser-based voice recognition)
+
+**Deployment:**
+
+* Docker (Python 3.11-slim image)
+
+---
+
+## 4. Project Structure
+
+```
+├── app.py
+├── requirements.txt
+├── templates/
+│   └── index.html
+├── static/
+│   └── css/
+│       └── style.css
+├── Dockerfile
+```
+
+---
+
+## 5. Setup Instructions
+
+### Local Setup
+
+```bash
+git clone https://github.com/your-username/ai-healthcare-chatbot.git
+cd ai-healthcare-chatbot
+pip install -r requirements.txt
+python app.py
+```
+
+Visit: [http://localhost:5000](http://localhost:5000)
+
+### Docker Setup
+
+```bash
+docker build -t ai-healthcare-chatbot .
+docker run -d -p 5050:5050 --name chatbot ai-healthcare-chatbot
+```
+
+Visit: [http://localhost:5050](http://localhost:5050)
+
+---
+
+## 6. Dockerfile Overview
+
+* Uses Python 3.11 slim image
+* Installs necessary system dependencies
+* Copies requirements and installs Python packages
+* Sets working directory and runs Flask app on port 5050
+* Uses a non-root user `appuser` for security
+
+---
+
+## 7. API Endpoints
+
+| Method | Endpoint                 | Description                   |
+| ------ | ------------------------ | ----------------------------- |
+| POST   | `/chat`                  | Send user message             |
+| GET    | `/get_history`           | Retrieve session chat history |
+| GET    | `/get_all_conversations` | List all chat sessions        |
+| POST   | `/clear_chatbox`         | Clear current chat history    |
+
+---
+
+## 8. Languages Supported
+
+| Language | Code |
+| -------- | ---- |
+| English  | en   |
+| Hindi    | hi   |
+| Tamil    | ta   |
+| Telugu   | te   |
+
+---
+
+## 9. Future Improvements
+
+* Integrate real medical APIs for more accurate responses
+* Implement database support for persistent storage
+* Convert to Flutter mobile app
+* Add user authentication and admin dashboard
+
+---
+
+## 10. Author
+
+**Barath Nivash K S**
+B.Tech Artificial Intelligence & Machine Learning
+SRM Institute of Science and Technology, Trichy Campus
+
+GitHub: barathks5
+Email: barathnivash.ks@gmail.com
+
